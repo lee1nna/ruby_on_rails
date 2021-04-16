@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'home/new'
   post 'home/create'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  #
+  get 'home/destroy/:post_id' => 'home#destroy'
+  get 'home/edit/:post_id' => 'home#edit'
 end
