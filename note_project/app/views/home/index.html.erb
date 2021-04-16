@@ -4,8 +4,8 @@
 <br>
 <% Post.all.each do |p| %>
   제목 : <%=p.title%><br/>
-  내용 : <%=p.content%><br />
-  <a href="/home/destroy/<%=p.id%>"> [삭제] </a> <br>
+  내용 : <%=p.content%><br /><br>
+  <a href="/home/destroy/<%=p.id%>"> [삭제] </a>
   <a href="/home/edit/<%=p.id%>">[수정]</a><br>
   --------------------<br />
 <% end %>
