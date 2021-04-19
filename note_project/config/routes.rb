@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   post 'home/create'
   
-  get 'home/destroy/:post_id' => 'home#destroy'
+  get 'home/destroy/:post_id' => 'home#destroy', as: 'post_destroy'
 
   get 'home/edit/:post_id' => 'home#edit'
 
