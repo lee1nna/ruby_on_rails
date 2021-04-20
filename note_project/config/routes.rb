@@ -11,6 +11,6 @@ Rails.application.routes.draw do
 
   get 'home/edit/:post_id' => 'home#edit'
 
-  post 'home/update/:post_id' => 'home#update'
+  patch 'home/update/:post_id' => 'home#update', as:'post'
   
 end
