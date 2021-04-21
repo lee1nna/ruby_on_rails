@@ -8,12 +8,12 @@ class HomeController < ApplicationController
   end
 
   def create
-    post = Post.new
-    post.title = params[:post_title]
-    post.content = params[:post_content]
-    post.save
+    @post = Post.new
+    @post.title = params[:post][:title]
+    @post.content = params[:post][:title]
+    @post.save
 
-    # redirect_to "/home/index"
+    redirect_to "/home/index"
   end
 
   def destroy
@@ -28,8 +28,8 @@ class HomeController < ApplicationController
 
   def update
     post = Post.find(params[:post_id])
-    post.title = params[:post_title]
-    post.content = params[:post_content]
+    post.title = params[:post][:title]
+    post.content = params[:post][:content]
     post.save
     
     redirect_to "/home/index"

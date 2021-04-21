@@ -2,7 +2,7 @@
 <form action='/home/update/<%=@post.id%>' method='post'>
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
     제목 : <input type="text" name="post_title" value='<%=@post.title%>'> <br> 
-    내용 : <textarea name="post_content"><%=@post.content%></textarea> 
+    내용 : <textarea name="post_content"><%=@post.content%></textarea> <br>
     <input type="submit" value="수정">
 </form>
 
@@ -12,5 +12,14 @@
     <%=text_field_tag 'post_title', @post.title %> <br>
     <%=label_tag 'post_content', '내용'%>
     <%=text_area_tag 'post_content', @post.content %> <br>
-    <%= submit_tag '제출' %>
+    <%= submit_tag '수정' %>
+<%end%>
+
+<%# rails의 form_for 활용%>
+<%=form_for(@post, url: post_path, method:'patch') do |f|%>
+    <%=f.label :title, '제목'%>
+    <%=f.text_field :title%><br>
+    <%=f.label :content, '내용'%>
+    <%=f.text_area :content%><br>
+    <%=f.submit '수정'%>
 <%end%>
