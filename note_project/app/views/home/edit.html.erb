@@ -16,7 +16,7 @@
 <%end%>
 
 <%# rails의 form_for 활용%>
-<%=form_for(@post, url: post_path, method:'patch') do |f|%>
+<%=form_for(@post) do |f|%>
     <%=f.label :title, '제목'%>
     <%=f.text_field :title%><br>
     <%=f.label :content, '내용'%>
