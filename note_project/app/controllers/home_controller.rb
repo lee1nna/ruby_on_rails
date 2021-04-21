@@ -4,6 +4,7 @@ class HomeController < ApplicationController
   end
 
   def new
+    @post = Post.new
   end
 
   def create
@@ -12,7 +13,7 @@ class HomeController < ApplicationController
     post.content = params[:post_content]
     post.save
 
-    redirect_to "/home/index"
+    # redirect_to "/home/index"
   end
 
   def destroy
