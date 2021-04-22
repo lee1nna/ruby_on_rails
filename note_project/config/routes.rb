@@ -1,16 +1,18 @@
 Rails.application.routes.draw do
   root "home#index"
 
-  get 'home/index'
+  resources: posts, controller: "home"
 
-  get 'home/new'
+  # get 'home/index'
 
-  post 'home/create', as: 'posts'
+  # get 'home/new'
+
+  # post 'home/create', as: 'posts'
   
-  get 'home/destroy/:post_id' => 'home#destroy', as: 'post_destroy'
+  # get 'home/destroy/:post_id' => 'home#destroy', as: 'post_destroy'
 
-  get 'home/edit/:post_id' => 'home#edit'
+  # get 'home/edit/:post_id' => 'home#edit'
 
-  patch 'home/update/:post_id' => 'home#update', as:'post'
+  # patch 'home/update/:post_id' => 'home#update', as:'post'
   
 end
