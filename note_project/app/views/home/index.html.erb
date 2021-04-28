@@ -1,7 +1,7 @@
 <h1>전체 글 목록입니다!</h1>
-<a href="/home/new"> 새 글 쓰기 </a>
-<br>
-<br>
+
+<%=link_to '새 글 쓰기', new_post_path%>
+<br><br>
 <% Post.all.each do |p| %>
   제목 : <%=p.title%><br/>
   내용 : <%=p.content%><br /><br>
