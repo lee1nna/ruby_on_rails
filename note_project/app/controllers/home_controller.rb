@@ -13,26 +13,26 @@ class HomeController < ApplicationController
     @post.content = params[:post][:content]
     @post.save
 
-    redirect_to "/home/index"
+    redirect_to posts_path
   end
 
   def destroy
-    post = Post.find(params[:post_id])
+    post = Post.find(params[:id])
     post.destroy
-    redirect_to "/home/index"
+    redirect_to posts_path
   end
 
   def edit
-    @post = Post.find(params[:post_id])
+    @post = Post.find(params[:id])
   end
 
   def update
-    post = Post.find(params[:post_id])
+    post = Post.find(params[:id])
     post.title = params[:post][:title]
     post.content = params[:post][:content]
     post.save
     
-    redirect_to "/home/index"
+    redirect_to posts_path
   end
   
 end
